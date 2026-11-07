@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#17243d" />
+    <meta name="description" content="Caminho do Respeito: uma jornada interativa para aprender a reconhecer e combater o racismo." />
+    <title>Caminho do Respeito</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" id="app">
+      <section class="screen screen--welcome is-active" id="welcome-screen" aria-labelledby="welcome-title">
+        <div class="welcome-art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="arc arc--one"></div>
+          <div class="arc arc--two"></div>
+          <div class="spark spark--one">✦</div>
+          <div class="spark spark--two">✦</div>
+          <div class="people"><span>🧑🏾</span><span>🧑🏻</span><span>🧑🏿</span><span>🧑🏼</span></div>
+        </div>
+        <div class="welcome-copy">
+          <p class="eyebrow">UMA JORNADA DE APRENDIZADO</p>
+          <h1 id="welcome-title">Caminho<br /><em>do Respeito</em></h1>
+          <p class="subtitle">Vamos aprender juntos a reconhecer o racismo no nosso dia a dia.</p>
+          <div class="notice"><span>🔒</span><p>As respostas serão registradas para análise educacional. Informe apenas os dados pedidos e converse com seu professor caso tenha dúvidas.</p></div>
+          <form id="student-form" novalidate>
+            <label for="student-name">Seu nome</label>
+            <input id="student-name" name="name" type="text" autocomplete="name" placeholder="Digite seu nome" maxlength="80" required />
+            <label for="student-class">Sua turma</label>
+            <input id="student-class" name="class" type="text" placeholder="Ex.: 7º ano B" maxlength="30" required />
+            <p class="form-error" id="form-error" role="alert"></p>
+            <button class="button button--primary" type="submit">Começar <span>→</span></button>
+          </form>
+        </div>
+      </section>
+
+      <section class="screen screen--journey" id="journey-screen" aria-live="polite" hidden>
+        <header class="journey-header">
+          <button class="icon-button" id="help-button" type="button" aria-label="Como funciona">?</button>
+          <div class="brand-mark">Caminho <span>do Respeito</span></div>
+          <div class="progress-label"><span id="progress-current">1</span>/5</div>
+        </header>
+        <div class="progress-track"><span id="progress-bar"></span></div>
+        <div class="journey-content" id="journey-content"></div>
+      </section>
+
+      <div class="modal-backdrop" id="help-modal" hidden>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+          <button class="modal-close" id="modal-close" type="button" aria-label="Fechar">×</button>
+          <span class="modal-icon">💡</span>
+          <h2 id="modal-title">Como funciona?</h2>
+          <p>Leia cada situação e escolha a resposta que mais combina com o que você faria. Depois de escolher, não dá para voltar: siga em frente e reflita sobre o que aprendeu.</p>
+          <button class="button button--primary" id="modal-ok" type="button">Entendi</button>
+        </div>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
